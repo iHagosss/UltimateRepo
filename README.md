@@ -1,11 +1,10 @@
 # Ultimate Nuvio Repo
 
-**59 de-duplicated, English-supporting scrapers** covering torrents, premium indexes, HD direct-link sites, anime and Asian drama. Ordered by hit-rate for rare/obscure titles (benchmark: *Small Time Gangster* AU).
-
-## Install URL (once you push to your own GitHub)
+**59 de-duplicated, English-supporting scrapers** covering torrents, premium indexes, HD direct-link sites, anime and Asian drama. Ordered by hit-rate for rare/obscure title
+## Install URL
 
 ```
-https://raw.githubusercontent.com/<YOUR-USERNAME>/<YOUR-REPO>/main/manifest.json
+https://raw.githubusercontent.com/iHagosss/UltimateRepo/main/manifest.json
 ```
 
 Paste in **Nuvio → Settings → Plugins → Add Repository**, then refresh and enable providers.
@@ -30,7 +29,7 @@ Excluded: pure-French, pure-Arabic, pure-Korean, pure-Bengali, pure-Malayalam sc
 
 1. Create a new **public** GitHub repo.
 2. `git init && git add . && git commit -m "init" && git remote add origin <repo> && git push -u origin main`
-3. In Nuvio, paste `https://raw.githubusercontent.com/<you>/<repo>/main/manifest.json`.
+3. In Nuvio, paste `https://raw.githubusercontent.com/iHagosss/UltimateRepo/main/manifest.json`.
 
 That's it. Auto-update runs on GitHub's own runners — nothing for you to maintain.
 
