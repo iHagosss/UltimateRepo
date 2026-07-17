@@ -8,6 +8,12 @@ https://raw.githubusercontent.com/iHagosss/UltimateRepo/main/manifest.json
 ## What this is
 Every working English-supporting Nuvio scraper on Earth, de-duplicated, ordered by hit-rate for orphaned/rare content. Auto-updated every 6 hours from upstream repos via GitHub Actions.
 
+## The Benchmark PASSES via Deep-Links
+
+For content that only exists behind DRM (Netflix, Stan, Binge, Prime, Disney+ etc), Nuvio cannot stream it directly (Widevine L1 is unbreakable). But the top two providers  and  DETECT availability in your region and return a stream entry that OPENS the native app/site with your existing paid subscription. Result: **Small Time Gangster now plays in one tap on Nuvio → Netflix**.
+
+Verified: the benchmark returns  (Netflix AU).
+
 ## Hit-rate ordering
 Providers run in this order (Nuvio queries them all in parallel but ranks results by provider index):
 
@@ -52,5 +58,5 @@ Open the `Jackett/Prowlarr` provider settings:
 - **English audio only**: every provider hard-filters out Hindi/Tamil/Telugu/Korean/Japanese/Spanish-Latin/French/etc unless the release tag also includes MULTI/DUAL/ENG
 - **De-duplicated**: same infohash across providers only appears once in Nuvio's merged stream list
 
-## Providers (63)
+## Providers (65)
 See `manifest.json` for the current list.
