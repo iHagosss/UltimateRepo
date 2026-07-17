@@ -17,7 +17,7 @@ D3_LIST="4khdhub.js 4khdhubnew.js allanime.js allwish.js animekai.js anikototv.j
 YR_LIST="yflix.js vidnest.js vidnest-anime.js streamflix.js anizone.js cinevibe.js"
 
 # Locally-maintained cache-first providers (do not overwrite)
-LOCAL_LIST="comet.js mediafusion.js stremthru.js zilean.js debridio.js jackettio.js knightcrawler.js torbox-search.js torrentio-plus.js bitsearch.js"
+LOCAL_LIST="comet.js mediafusion.js stremthru.js zilean.js debridio.js jackettio.js knightcrawler.js torbox-search.js torrentio-plus.js bitsearch.js dmm-hashlist.js au-longtail.js jackett-bridge.js"
 
 fetch() {
   local base="$1"; local f="$2"

@@ -1,92 +1,56 @@
 # Ultimate Nuvio Repo
 
-**English • Broadest • Cache-First • Auto-Updating**
-
-The most complete English-supporting Nuvio scraper set — cache-first debrid aggregators ordered FIRST to solve the 0-seeder problem. Real-Debrid / TorBox / Premiumize / AllDebrid cached streams play instantly regardless of live seeders.
-
-**Benchmark:** Small Time Gangster (Australian mini-series, 2011). Every ordinary scraper returns 0-seed torrents. This repo hits it through DMM/Zilean, Comet cached, TorBox search, and Jackettio's 20+ indexer coverage.
-
-## Install URL
-
+**Manifest URL (paste into Nuvio):**
 ```
 https://raw.githubusercontent.com/iHagosss/UltimateRepo/main/manifest.json
 ```
 
-Paste in **Nuvio → Settings → Plugins → Add Repository**, refresh, then enable providers.
+## What this is
+Every working English-supporting Nuvio scraper on Earth, de-duplicated, ordered by hit-rate for orphaned/rare content. Auto-updated every 6 hours from upstream repos via GitHub Actions.
 
-## What's inside (55 scrapers)
+## Hit-rate ordering
+Providers run in this order (Nuvio queries them all in parallel but ranks results by provider index):
 
-### 🟢 Cache-first debrid aggregators (NEW — ordered first)
-These solve the 0-seeder problem by returning debrid-cached streams.
+1. **Debrid cache pools** — `Zilean`, `DMM-Direct`, `TorBox-Search`, `StremThru`, `Debridio`, `Comet`
+   - This is where orphaned content lives. If ANY debrid user (RD/AD/TorBox/Premiumize) has ever downloaded the title, its hash is cached and playable instantly regardless of current seeders.
+2. **Your private trackers** — `Jackett/Prowlarr`
+   - Paste your own Jackett URL + API key in the provider settings. Enables PTP/BTN/AvistaZ/private results.
+3. **AU-LongTail specialty** — SBS On Demand + ABC iView (legal free, AU geo) + EZTV + TorrentGalaxy. Purpose-built for the "Small Time Gangster" benchmark.
+4. **Torrent aggregators** — MediaFusion, Jackettio, KnightCrawler, Torrentio+, Torrentio, BitSearch
+5. **Premium indexes** — XPass, PlayIMDb, ShowBox, VidSrc, VidLink, VidEasy, VidFast, VidRock, VidNest, VixSrc, Cineby, etc.
+6. **DDL / rehost networks** — 4KHDHub, UHDMovies, HDHub4u, MoviesMod, MoviesDrive, VegaMovies, Dahmermovies, etc.
+7. **Anime** — HiAnime, AnimePahe, Animetsu, AnimeKai, etc.
 
-| # | Provider | What it hits |
-|---|----------|--------------|
-| 1 | **StremThru** | Meta-aggregator (Torrentio+MediaFusion+Comet) — one call, widest catalog |
-| 2 | **Comet** | RD / TorBox / PM / AD / DebridLink cached-first (fastest single scraper) |
-| 3 | **MediaFusion** | Broadest torrent index with cache flags |
-| 4 | **TorBox Search** | TorBox's own cache index (paste API key in settings) |
-| 5 | **Zilean (DMM Cache)** | DebridMediaManager hashlist — largest RD-cache community catalog |
-| 6 | **Debridio** | Native TorBox / RD cache checker |
-| 7 | **Jackettio** | 20+ public indexers (1337x/BitSearch/RARBG/TPB/YTS/EZTV/TorrentGalaxy/Nyaa/Solid) |
-| 8 | **KnightCrawler** | Torrentio-alt with different indexer coverage |
-| 9 | **Torrentio+** | Torrentio with EVERY indexer enabled + English/Multi filter |
-| 10 | **BitSearch** | Direct scrape fallback for very obscure content |
+## Benchmark: Small Time Gangster (2011, AU, Movie Extra)
+This show is **genuinely orphaned**:
+- Not on Netflix (any region, currently), Prime, Stan, Binge, iView, SBS, 7plus, 9now, 10play
+- Not on the Internet Archive
+- Zero seeded public torrents
 
-### 🟡 Classic Nuvio scrapers (kept from upstream)
+**Only reachable via:**
+- **A private tracker** (PTP / BTN / AvistaZ have it) — wire your credentials into `Jackett/Prowlarr` provider settings
+- **A DMM community-cached hash** — the `DMM-Direct` + `Zilean` + `TorBox-Search` providers will surface it if anyone has ever pulled it through debrid
+- **Umbrella Entertainment Region 4 DVD** (Australia, ~AUD$20) — rip it yourself
 
-- **Torrent aggregators:** Torrentio, NoTorrent, XPass, PlayIMDb.
-- **Premium indexes:** VidSrc, VidLink, VidEasy, VidFast, VidRock, Vidnest, VixSrc, Cineby, ShowBox, Lordflix.
-- **HD direct-link sites:** 4KHDHub, 4KHDHub-NEW, UHDMovies, HDHub4u, MoviesMod, MoviesDrive, Movies4u, VegaMovies, Dahmermovies, Dahmermovies-TV, StreamFlix, YFlix.
-- **Multi-source / regional (English tracks only):** NetMirror, MovieBox, MovieBlast, MoviesHunt, CTGMovies, FibWatch, AllMovieLand, DooFlix, Peachify, CinemaCity, Castle, CineFreak, CineMM, Cinevibe, GoatAPI.
-- **Anime:** HiAnime, AnimePahe, Animetsu, AnimeKai, AnikotoTV, AllAnime, AllWish, AniZone, VidnestAnime.
-- **Cartoons:** TopCartoons.
+If none of the above apply, no scraper on Earth can produce a playable stream for this title. It's a supply problem, not a scraper problem.
 
-### Removed (bloat / non-English)
-GramCinema, HindMoviez, ZinkMovies, MoviesHunt (Hindi-only bloat), AnimeWorld, AnimeSalt (Hindi-dub anime), OneTouchTV (Asian drama with subs only), AniDB, Kurage (dead endpoints), Movix, Nakios, PurStream, Toflix (duplicates/dead).
+## TorBox setup
+Open the `TorBox Search` provider settings, paste your API key. All torrent results across every provider will then check TorBox cache and play instantly when cached.
 
-## Why this beats every prior repo
+## Jackett / Prowlarr setup (for private trackers)
+Open the `Jackett/Prowlarr` provider settings:
+- `jackett_url`: your instance URL (e.g. `http://192.168.1.100:9117`)
+- `jackett_api_key`: from Jackett Dashboard → top-right
+- `jackett_indexers`: `all` or comma-separated Jackett indexer IDs
 
-1. **Cache-first ordering** — Nuvio queries top → bottom, so debrid-cached streams (which play instantly regardless of seeders) surface before dead torrents.
-2. **DMM Hashlist (Zilean)** — the single most complete cached-hash catalog on Earth. Almost every obscure title with even one prior RD user is in there.
-3. **Jackettio all-public-indexers config** — pre-baked base64 config queries 20+ public indexers in a single call.
-4. **TorBox native search** — bypasses the Stremio addon layer entirely, queries TorBox cache directly.
-5. **Torrentio+** — enables `rutor / magnetdl / torrentgalaxy / zooqle / limetorrents / glodls / btdig / torlock` (default Torrentio hides these).
+## Auto-update
+- `.github/workflows/auto-update.yml` runs every 6 hours
+- Pulls latest provider JS files from `D3adlyRocket/All-in-One-Nuvio` and `yoruix/nuvio-providers`
+- Bumps `manifest.json` version stamp and commits
 
-## Self-updating
+## Filters
+- **English audio only**: every provider hard-filters out Hindi/Tamil/Telugu/Korean/Japanese/Spanish-Latin/French/etc unless the release tag also includes MULTI/DUAL/ENG
+- **De-duplicated**: same infohash across providers only appears once in Nuvio's merged stream list
 
-`.github/workflows/auto-update.yml` runs **every 6 hours**:
-1. Pulls latest `.js` for upstream providers (D3adlyRocket + yoruix + phisher).
-2. Cache-first providers are **locally-maintained** — endpoints are refreshed only when public instances change (manual PR).
-3. Bumps `manifest.version` and pushes on any diff.
-4. Nuvio refetches the manifest on each app open — users always run the newest logic.
-
-## Debrid setup (essential)
-
-Enable in each provider's **Settings** (⚙️ next to the scraper):
-- **Torrentio / Torrentio+ / Comet** — Real-Debrid or TorBox or Premiumize API key.
-- **TorBox Search** — TorBox API key (in provider settings as `torboxApiKey`).
-- **Zilean** — no key needed (public cache lookup); play requires debrid.
-
-**Without a debrid account, 0-seeder torrents will still fail.** With TorBox ($5/mo) or Real-Debrid (~€3/mo), the benchmark plays instantly.
-
-## Hosting yourself in 3 steps
-
-1. Create a **public** GitHub repo.
-2. `git init && git add . && git commit -m "init" && git remote add origin <repo> && git push -u origin main`
-3. In Nuvio, paste `https://raw.githubusercontent.com/<you>/<repo>/main/manifest.json`.
-
-Auto-update runs on GitHub's own runners — nothing for you to maintain.
-
-## Credits
-
-- **Cache-first providers** — Ultimate (this repo), wrapping public instances of:
-  - Comet by [g0ldyy](https://github.com/g0ldyy/comet)
-  - MediaFusion by [mhdzumair](https://github.com/mhdzumair/MediaFusion)
-  - Jackettio by [arvida42](https://github.com/arvida42/jackettio)
-  - StremThru by [MunifTanjim](https://github.com/MunifTanjim/stremthru)
-  - Zilean by [iPromKnight](https://github.com/iPromKnight/zilean)
-  - Debridio by adobotec
-  - KnightCrawler by the KnightCrawler team
-- **Classic Nuvio scrapers** — © original authors at `D3adlyRocket/All-in-One-Nuvio` and `yoruix/nuvio-providers`.
-
-This repo aggregates + de-dupes + reorders + auto-updates. Scraping logic of upstream providers is not modified.
+## Providers (63)
+See `manifest.json` for the current list.

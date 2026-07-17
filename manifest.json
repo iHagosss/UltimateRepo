@@ -1,68 +1,1411 @@
 {
-  "name": "Ultimate Nuvio Repo (English • Broadest • Cache-First • Auto-Updating)",
-  "version": "2026.02.15.2",
-  "description": "The most complete English-supporting Nuvio scraper set. Cache-first debrid aggregators (Comet, MediaFusion, StremThru, TorBox Search, Zilean-DMM, Debridio, Jackettio, KnightCrawler) placed FIRST to solve the 0-seeder problem — Real-Debrid/TorBox/Premiumize/AllDebrid cached streams play instantly regardless of live seeders. Benchmark: Small Time Gangster (AU 2011). Auto-updates every 6 hours via GitHub Actions from D3adlyRocket + yoruix + phisher + upstream Stremio addon manifests.",
+  "name": "Ultimate Nuvio Repo (English \u2022 Broadest \u2022 Auto-Updating)",
+  "version": "2026.07.17.0624",
+  "description": "Every working English-supporting Nuvio scraper on Earth, de-duplicated, ordered by hit-rate for orphaned/rare content (benchmark: Small Time Gangster AU 2011). Order: [Debrid caches \u2192 Zilean/DMM/TorBox/StremThru] \u2192 [Jackett private-tracker passthrough] \u2192 [AU-LongTail specialty] \u2192 [Torrent aggregators: Comet/MediaFusion/Jackettio/Torrentio] \u2192 [Premium indexes] \u2192 [Anime]. Auto-updates every 6h from D3adlyRocket + yoruix + phisher upstreams.",
   "scrapers": [
-    { "id": "stremthru", "name": "🌐 StremThru (Meta)", "description": "Single-query meta-aggregator across Torrentio + MediaFusion + Comet + more. Cache-first. Fastest single call for the broadest catalog.", "version": "1.0.0", "author": "Ultimate", "supportedTypes": ["movie","tv"], "filename": "providers/stremthru.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png", "contentLanguage": ["en"] },
-    { "id": "comet", "name": "☄️ Comet (Cached Debrid)", "description": "Stremio's fastest torrent+debrid search. Returns Real-Debrid / TorBox / Premiumize / AllDebrid / DebridLink CACHED streams first — plays instantly even with 0 seeders. Best for obscure AU/UK TV like Small Time Gangster.", "version": "1.0.0", "author": "g0ldyy", "supportedTypes": ["movie","tv"], "filename": "providers/comet.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png", "contentLanguage": ["en"] },
-    { "id": "mediafusion", "name": "🔀 MediaFusion", "description": "Broad catalog cache-checked scraper. Excellent hit-rate on older/obscure content missed by Torrentio.", "version": "1.0.0", "author": "mhdzumair", "supportedTypes": ["movie","tv"], "filename": "providers/mediafusion.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/RZRHQd75/vidlink.png", "contentLanguage": ["en"] },
-    { "id": "torbox-search", "name": "📦 TorBox Search (Cached)", "description": "Queries TorBox's own cache index (deepest cache for obscure content because it stores what its userbase downloads). Add your TorBox API key in provider settings.", "version": "1.0.0", "author": "Ultimate", "supportedTypes": ["movie","tv"], "filename": "providers/torbox-search.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/DZpW6Xfb/4khdhub.png", "contentLanguage": ["en"] },
-    { "id": "zilean", "name": "📚 Zilean (DMM Cache)", "description": "Searches DebridMediaManager hashlist — the largest community-sourced cached-hash catalog. Almost every RD-cached obscure torrent lives here.", "version": "1.0.0", "author": "iPromKnight", "supportedTypes": ["movie","tv"], "filename": "providers/zilean.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/tgqNQxdy/xpass.png", "contentLanguage": ["en"] },
-    { "id": "debridio", "name": "🔓 Debridio", "description": "Native TorBox / Real-Debrid cache checker. Good secondary source when Comet/MediaFusion miss.", "version": "1.0.0", "author": "adobotec", "supportedTypes": ["movie","tv"], "filename": "providers/debridio.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/8c5XGzsx/showbox.png", "contentLanguage": ["en"] },
-    { "id": "jackettio", "name": "🎯 Jackettio (Indexers)", "description": "Queries 20+ public trackers (1337x/BitSearch/RARBG/TPB/YTS/EZTV/TorrentGalaxy/Nyaa/Solid). Includes 0-seeder torrents (debrid may still have cache).", "version": "1.0.0", "author": "arvida42", "supportedTypes": ["movie","tv"], "filename": "providers/jackettio.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/ncMLBsLJ/vidsrc.png", "contentLanguage": ["en"] },
-    { "id": "knightcrawler", "name": "⚔️ KnightCrawler", "description": "Torrentio alternative with different indexer coverage. Catches releases Torrentio misses.", "version": "1.0.0", "author": "KnightCrawler", "supportedTypes": ["movie","tv"], "filename": "providers/knightcrawler.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/vZgHT15q/lordflix.png", "contentLanguage": ["en"] },
-    { "id": "torrentio-plus", "name": "🌊 Torrentio+ (Max Recall)", "description": "Torrentio queried with ALL indexers enabled (rutor/magnetdl/torrentgalaxy/zooqle/limetorrents/glodls/btdig/torlock) + English/Multi filter. Highest raw torrent recall.", "version": "1.0.0", "author": "Ultimate", "supportedTypes": ["movie","tv"], "filename": "providers/torrentio-plus.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png", "contentLanguage": ["en"] },
-    { "id": "bitsearch", "name": "🔎 BitSearch (Fallback)", "description": "Direct meta-search across 20+ public torrent sites. Last-resort catch for very obscure content.", "version": "1.0.0", "author": "Ultimate", "supportedTypes": ["movie","tv"], "filename": "providers/bitsearch.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/rpDB2284/cinefreak.png", "contentLanguage": ["en"] },
-
-    { "id": "torrentio", "name": "🧲 Torrentio", "description": "Classic torrent aggregator (RARBG/TPB/1337x/YTS + RD/PM/TorBox). Broadest baseline catalog.", "version": "1.0.0", "author": "Phisher", "supportedTypes": ["movie","tv"], "filename": "providers/torrentio.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png", "contentLanguage": ["en"] },
-    { "id": "xpass", "name": "XPass", "description": "TMDB/IMDb resolver — very fast, deep catalog including rare TV.", "version": "1.0.0", "author": "Dustincos", "supportedTypes": ["movie","tv"], "filename": "providers/xpass.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/tgqNQxdy/xpass.png", "contentLanguage": ["en"] },
-    { "id": "playimdb", "name": "PlayIMDb", "description": "High-speed IMDb-based streaming — obscure titles supported.", "version": "2.0.0", "author": "PirateZoro9", "supportedTypes": ["movie","tv"], "filename": "providers/playimdb.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/KzjPtYWY/imdb.png", "contentLanguage": ["en"] },
-    { "id": "notorrent", "name": "NoTorrent", "description": "Non-P2P proxy resolver — hits rare AU/UK releases.", "version": "1.0.0", "author": "Dustincos", "supportedTypes": ["movie","tv"], "filename": "providers/notorrent.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/FsSpNcVP/notorrent.png", "contentLanguage": ["en"] },
-    { "id": "showbox", "name": "ShowBox", "description": "ShowBox/FMovies backend — massive Western catalog.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/showbox.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/8c5XGzsx/showbox.png", "contentLanguage": ["en"] },
-    { "id": "vidsrc", "name": "VidSrc", "description": "Vidsrc premium index — 1080p HD, broad TV coverage.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/vidsrc.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/ncMLBsLJ/vidsrc.png", "contentLanguage": ["en"] },
-    { "id": "vidlink", "name": "VidLink", "description": "Vidlink encrypted TMDB streaming.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/vidlink.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/RZRHQd75/vidlink.png", "contentLanguage": ["en"] },
-    { "id": "videasy", "name": "VidEasy", "description": "Multi-server encrypted TMDB streaming.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/videasy.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/7LHYMtVV/videasy.png", "contentLanguage": ["en"] },
-    { "id": "vidfast", "name": "VidFast", "description": "vidfast.pro streams.", "version": "1.0.0", "author": "Dustincos", "supportedTypes": ["movie","tv"], "filename": "providers/vidfast.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/0Qp8PSx5/vidfast.png", "contentLanguage": ["en"] },
-    { "id": "vidrock", "name": "🪨 VidRock", "description": "1080p/480p/360p multi-server.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/vidrock.js", "enabled": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/brxL7qg3/multivid.png", "contentLanguage": ["en"] },
-    { "id": "vidnest", "name": "Vidnest", "description": "AES-GCM encrypted sources.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/vidnest.js", "enabled": true, "formats": ["mp4","m3u8"], "logo": "https://vidnest.fun/favicon.ico", "contentLanguage": ["en"] },
-    { "id": "vixsrc", "name": "VixSrc", "description": "VixSrc m3u8 with auto quality (IT+EN).", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/vixsrc.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/1tHrBvzs/vixsrc.png", "contentLanguage": ["en","it"] },
-    { "id": "cineby", "name": "Cineby", "description": "Multi-server 4K/1080p/720p (Videasy network).", "version": "1.9.2", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/cineby.js", "enabled": true, "hasSettings": true, "formats": ["m3u8"], "logo": "https://i.postimg.cc/dV1HWbqX/cineby.png", "contentLanguage": ["en"] },
-    { "id": "cinevibe", "name": "Cinevibe", "description": "Cinevibe.online movies.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie"], "filename": "providers/cinevibe.js", "enabled": true, "formats": ["mp4","m3u8"], "logo": "https://www.google.com/s2/favicons?domain=cinevibe.online&sz=128", "contentLanguage": ["en"] },
-    { "id": "cinefreak", "name": "CineFreak", "description": "Direct MKV streams from cinefreak.nl.", "version": "1.0.0", "author": "piratezoro9", "supportedTypes": ["movie","tv"], "filename": "providers/cinefreak.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/rpDB2284/cinefreak.png", "contentLanguage": ["en"] },
-    { "id": "cinemm", "name": "CineMM", "description": "cinemm.com direct MP4 (multi-CDN).", "version": "1.0.0", "author": "piratezoro9", "supportedTypes": ["movie","tv"], "filename": "providers/cinemm.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/GtQX10hd/cinemm.png", "contentLanguage": ["en"] },
-    { "id": "cinemacity", "name": "CinemaCity", "description": "Multi-language provider.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/cinemacity.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/XYjKhS3b/cinemacity.png", "contentLanguage": ["en"] },
-    { "id": "castle", "name": "🏰 Castle", "description": "Multi-lang aggregator.", "version": "2.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/castle.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/0NvGzFyK/castle.png", "contentLanguage": ["en"] },
-    { "id": "lordflix", "name": "Lordflix", "description": "Cascading multi-proxy decryption.", "version": "1.0.0", "author": "dustincos", "supportedTypes": ["movie","tv"], "filename": "providers/lordflix.js", "enabled": true, "hasSettings": true, "formats": ["m3u8"], "logo": "https://i.postimg.cc/vZgHT15q/lordflix.png", "contentLanguage": ["en"] },
-    { "id": "netmirror", "name": "NetMirror", "description": "Netflix / Prime / Disney mirror.", "version": "1.0.0", "author": "Dustincos", "supportedTypes": ["movie","tv"], "filename": "providers/netmirror.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8","mkv"], "logo": "https://i.postimg.cc/L64M3bYV/netmirror.png", "contentLanguage": ["en"] },
-    { "id": "4khdhub", "name": "4KHDHub", "description": "4KHDHub direct links.", "version": "1.0.1", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/4khdhub.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/DZpW6Xfb/4khdhub.png", "contentLanguage": ["en"] },
-    { "id": "4khdhubnew", "name": "4KHDHub-NEW", "description": "4KHDHub v2 - broader catalog.", "version": "2.0.0", "author": "Xyr0nX", "supportedTypes": ["movie","tv"], "filename": "providers/4khdhubnew.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/DZpW6Xfb/4khdhub.png", "contentLanguage": ["en"] },
-    { "id": "uhdmovies", "name": "UHDMovies", "description": "UHD Movies multi-resolution.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/uhdmovies.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/KzDBBdbK/uhdmovies.png", "contentLanguage": ["en"] },
-    { "id": "hdhub4u", "name": "HDHub4u", "description": "HDHub4u high-speed direct links.", "version": "1.0.1", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/hdhub4u.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/mryRTf0R/hdhub4u.png", "contentLanguage": ["en"] },
-    { "id": "moviesmod", "name": "MoviesMod", "description": "MoviesMod multi-quality.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/moviesmod.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8","mkv"], "logo": "https://i.postimg.cc/YqWDJtWW/moviesmod.png", "contentLanguage": ["en"] },
-    { "id": "moviesdrive", "name": "MoviesDrive", "description": "MoviesDrive multi-server (HubCloud/GDrive).", "version": "3.0.0", "author": "PirateZoro9", "supportedTypes": ["movie","tv"], "filename": "providers/moviesdrive.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/bwDbhq9q/moviesdrive.png", "contentLanguage": ["en"] },
-    { "id": "movies4u", "name": "Movies4u", "description": "Hollywood/Bollywood movies + web series HD.", "version": "1.0.2", "author": "Nuvio Team", "supportedTypes": ["movie"], "filename": "providers/movies4u.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/J0QG1QhQ/movies4u.jpg", "contentLanguage": ["en"] },
-    { "id": "movieblast", "name": "MovieBlast", "description": "MovieBlast multi-quality.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/movieblast.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/qqkLSyhN/movieblast.png", "contentLanguage": ["en"] },
-    { "id": "moviebox", "name": "MovieBox", "description": "MovieBox multi-lang streams.", "version": "1.0.1", "author": "Xyr0nX", "supportedTypes": ["movie","tv"], "filename": "providers/moviebox.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/TPwkfqHh/moviebox.png", "contentLanguage": ["en"] },
-    { "id": "vegamovies", "name": "VegaMovies", "description": "VegaMovies HD direct links.", "version": "2.0", "author": "piratezoro9", "supportedTypes": ["movie","tv"], "filename": "providers/vegamovies.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv"], "logo": "https://i.postimg.cc/TwYK26jn/vegamovies.png", "contentLanguage": ["en"] },
-    { "id": "dahmermovies", "name": "Dahmermovies", "description": "1080p movie archive (deep catalog).", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/dahmermovies.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/hGt3dV6Z/dhamermovies.png", "contentLanguage": ["en"] },
-    { "id": "dahmermovies-tv", "name": "Dahmermovies-TV", "description": "Dahmermovies TV (Android TV only).", "version": "1.0.1", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/dahmermovies-4k.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/hGt3dV6Z/dhamermovies.png", "contentLanguage": ["en"] },
-    { "id": "streamflix", "name": "StreamFlix", "description": "StreamFlix API direct links.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/streamflix.js", "enabled": true, "formats": ["mkv"], "logo": "https://streamflix.app/assets/images/logo-text-148x72.png", "contentLanguage": ["en"] },
-    { "id": "yflix", "name": "YFlix", "description": "YFlix streaming.", "version": "1.1.2", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/yflix.js", "enabled": true, "formats": ["m3u8","mp4"], "logo": "https://yflix.to/assets/uploads/2f505f3de3c99889c1a72557f3e3714fc0c457b0.png", "contentLanguage": ["en"] },
-    { "id": "goatapi", "name": "🐐 GoatAPI", "description": "GoatAPI movies indexed by TMDB.", "version": "1.0.0", "author": "Aeyshx", "supportedTypes": ["movie"], "filename": "providers/goatapi.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/d1vkPZpY/goatapi.png", "contentLanguage": ["en"] },
-    { "id": "peachify", "name": "🍑 Peachify", "description": "peachify.top - 3 servers (MovieBox/Holly/Air) via CF workers.", "version": "1.0.0", "author": "piratezoro9", "supportedTypes": ["movie","tv"], "filename": "providers/peachify.js", "enabled": true, "hasSettings": true, "formats": ["m3u8","mp4"], "logo": "https://i.postimg.cc/tCz8CDH3/peachify.png", "contentLanguage": ["en"] },
-    { "id": "ctgmovies", "name": "CTGMovies", "description": "English/Hindi movies.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/ctgmovies.js", "enabled": true, "hasSettings": true, "formats": ["m3u8","mp4","mkv"], "logo": "https://i.postimg.cc/jSQmk9B3/ctgmovies.png", "contentLanguage": ["en"] },
-    { "id": "fibwatch", "name": "FibWatch", "description": "Movies/Series/Anime EN.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/fibwatch.js", "enabled": true, "hasSettings": true, "formats": ["mkv","m3u8"], "logo": "https://i.postimg.cc/sfLR6dMm/fibwatch.png", "contentLanguage": ["en"] },
-    { "id": "allmovieland", "name": "AllMovieLand", "description": "AllMovieLand multi-lang.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/allmovieland.js", "enabled": true, "hasSettings": true, "formats": ["m3u8"], "logo": "https://i.postimg.cc/hhWqkVQs/allmovieland.png", "contentLanguage": ["en"] },
-    { "id": "dooflix", "name": "DooFlix", "description": "Fast streaming with TMDB integration.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/dooflix.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/59H1DmRk/dooflix.png", "contentLanguage": ["en"] },
-    { "id": "topcartoons", "name": "TopCartoons", "description": "Popular cartoons streaming.", "version": "1.0.0", "author": "Phisher", "supportedTypes": ["movie","tv"], "filename": "providers/topcartoons.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/3xVsbwp8/topcartoons.png", "contentLanguage": ["en"] },
-    { "id": "hianime", "name": "HiAnime", "description": "HiAnime multi-server + subs.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/hianime.js", "enabled": true, "hasSettings": true, "formats": ["m3u8"], "logo": "https://i.postimg.cc/13SYJPTx/hianime.png", "contentLanguage": ["en"] },
-    { "id": "animepahe", "name": "AnimePahe", "description": "AnimePahe sub/dub fast servers.", "version": "1.0.1", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/animepahe.js", "enabled": true, "hasSettings": true, "formats": ["m3u8","mp4"], "logo": "https://i.postimg.cc/c4ZBGNNs/animepahe.png", "contentLanguage": ["en"] },
-    { "id": "animetsu", "name": "Animetsu", "description": "Lightning fast sub&dub anime.", "version": "1.0.0", "author": "piratezoro9", "supportedTypes": ["movie","tv"], "filename": "providers/animetsu.js", "enabled": true, "hasSettings": true, "formats": ["m3u8"], "logo": "https://i.postimg.cc/0Q3DvLx7/animetsu.png", "contentLanguage": ["en"] },
-    { "id": "animekai", "name": "AnimeKai", "description": "AnimeKai TV episodes.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/animekai.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/MKJd7fy7/animekai.png", "contentLanguage": ["en"] },
-    { "id": "anikototv", "name": "AnikotoTV", "description": "AnikotoTV.to mapper + native extractor.", "version": "1.0.5", "author": "piratezoro9", "supportedTypes": ["movie","tv"], "filename": "providers/anikototv.js", "enabled": true, "hasSettings": true, "formats": ["mp4"], "logo": "https://i.postimg.cc/JhL3HBR4/anikototv.png", "contentLanguage": ["en"] },
-    { "id": "allanime", "name": "AllAnime", "description": "AllAnime anime & manga content.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/allanime.js", "enabled": true, "hasSettings": true, "formats": ["mp4","mkv","m3u8"], "logo": "https://i.postimg.cc/DwpqLJWV/allanime.png", "contentLanguage": ["en"] },
-    { "id": "allwish", "name": "🌟 All-Wish", "description": "All-Wish TV episodes.", "version": "1.0.1", "author": "Kabir", "supportedTypes": ["movie","tv"], "filename": "providers/allwish.js", "enabled": true, "hasSettings": true, "formats": ["mp4","m3u8"], "logo": "https://i.postimg.cc/WpFW45WQ/allwish.png", "contentLanguage": ["en"] },
-    { "id": "anizone", "name": "AniZone", "description": "AniZone high-quality multi-audio.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/anizone.js", "enabled": true, "formats": ["m3u8"], "logo": "https://anizone.to/favicon.ico", "contentLanguage": ["en"] },
-    { "id": "vidnest-anime", "name": "VidnestAnime", "description": "TMDB→AniList mapping, 5 servers sub/dub.", "version": "1.0.0", "author": "Nuvio Team", "supportedTypes": ["movie","tv"], "filename": "providers/vidnest-anime.js", "enabled": true, "formats": ["m3u8"], "logo": "https://vidnest.fun/favicon.ico", "contentLanguage": ["en"] }
+    {
+      "id": "zilean",
+      "name": "\ud83d\udcda Zilean (DMM Cache)",
+      "description": "Searches DebridMediaManager hashlist \u2014 the largest community-sourced cached-hash catalog. Almost every RD-cached obscure torrent lives here.",
+      "version": "1.0.0",
+      "author": "iPromKnight",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/zilean.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/tgqNQxdy/xpass.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "dmm-hashlist",
+      "name": "DMM-Direct",
+      "description": "Queries DebridMediaManager's raw GitHub hashlists directly. Millions of community-cached hashes -- the deepest well for orphaned/obscure content when Zilean is stale.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dmm-hashlist.js",
+      "enabled": true,
+      "hasSettings": false,
+      "formats": [
+        "mkv",
+        "mp4"
+      ],
+      "logo": "https://www.google.com/s2/favicons?domain=debridmediamanager.com&sz=128",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "torbox-search",
+      "name": "\ud83d\udce6 TorBox Search (Cached)",
+      "description": "Queries TorBox's own cache index (deepest cache for obscure content because it stores what its userbase downloads). Add your TorBox API key in provider settings.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/torbox-search.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/DZpW6Xfb/4khdhub.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "stremthru",
+      "name": "\ud83c\udf10 StremThru (Meta)",
+      "description": "Single-query meta-aggregator across Torrentio + MediaFusion + Comet + more. Cache-first. Fastest single call for the broadest catalog.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/stremthru.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "debridio",
+      "name": "\ud83d\udd13 Debridio",
+      "description": "Native TorBox / Real-Debrid cache checker. Good secondary source when Comet/MediaFusion miss.",
+      "version": "1.0.0",
+      "author": "adobotec",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/debridio.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/8c5XGzsx/showbox.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "comet",
+      "name": "\u2604\ufe0f Comet (Cached Debrid)",
+      "description": "Stremio's fastest torrent+debrid search. Returns Real-Debrid / TorBox / Premiumize / AllDebrid / DebridLink CACHED streams first \u2014 plays instantly even with 0 seeders. Best for obscure AU/UK TV like Small Time Gangster.",
+      "version": "1.0.0",
+      "author": "g0ldyy",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/comet.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "jackett-bridge",
+      "name": "Jackett/Prowlarr",
+      "description": "Passthrough to your own Jackett/Prowlarr instance. Set jackett_url + jackett_api_key in settings. Enables PRIVATE tracker results (PTP/BTN/AvistaZ) -- the only real path to orphaned content.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/jackett-bridge.js",
+      "enabled": true,
+      "hasSettings": true,
+      "settingsSchema": [
+        {
+          "key": "jackett_url",
+          "type": "text",
+          "label": "Jackett URL",
+          "placeholder": "http://localhost:9117"
+        },
+        {
+          "key": "jackett_api_key",
+          "type": "text",
+          "label": "Jackett API Key"
+        },
+        {
+          "key": "jackett_indexers",
+          "type": "text",
+          "label": "Indexer IDs (comma-separated or 'all')",
+          "default": "all"
+        }
+      ],
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://raw.githubusercontent.com/Jackett/Jackett/master/src/Jackett.Common/Content/favicon.ico",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "mediafusion",
+      "name": "\ud83d\udd00 MediaFusion",
+      "description": "Broad catalog cache-checked scraper. Excellent hit-rate on older/obscure content missed by Torrentio.",
+      "version": "1.0.0",
+      "author": "mhdzumair",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/mediafusion.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/RZRHQd75/vidlink.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "jackettio",
+      "name": "\ud83c\udfaf Jackettio (Indexers)",
+      "description": "Queries 20+ public trackers (1337x/BitSearch/RARBG/TPB/YTS/EZTV/TorrentGalaxy/Nyaa/Solid). Includes 0-seeder torrents (debrid may still have cache).",
+      "version": "1.0.0",
+      "author": "arvida42",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/jackettio.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/ncMLBsLJ/vidsrc.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "knightcrawler",
+      "name": "\u2694\ufe0f KnightCrawler",
+      "description": "Torrentio alternative with different indexer coverage. Catches releases Torrentio misses.",
+      "version": "1.0.0",
+      "author": "KnightCrawler",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/knightcrawler.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/vZgHT15q/lordflix.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "torrentio-plus",
+      "name": "\ud83c\udf0a Torrentio+ (Max Recall)",
+      "description": "Torrentio queried with ALL indexers enabled (rutor/magnetdl/torrentgalaxy/zooqle/limetorrents/glodls/btdig/torlock) + English/Multi filter. Highest raw torrent recall.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/torrentio-plus.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "torrentio",
+      "name": "\ud83e\uddf2 Torrentio",
+      "description": "Classic torrent aggregator (RARBG/TPB/1337x/YTS + RD/PM/TorBox). Broadest baseline catalog.",
+      "version": "1.0.0",
+      "author": "Phisher",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/torrentio.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/ZRYTCy0T/torrentio.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "bitsearch",
+      "name": "\ud83d\udd0e BitSearch (Fallback)",
+      "description": "Direct meta-search across 20+ public torrent sites. Last-resort catch for very obscure content.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/bitsearch.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/rpDB2284/cinefreak.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "au-longtail",
+      "name": "AU-LongTail",
+      "description": "Specialty scraper for orphaned Australian TV: SBS On Demand + ABC iView (legal free) + EZTV + TorrentGalaxy. Purpose-built for the 'Small Time Gangster' benchmark and similar rare AU content.",
+      "version": "1.0.0",
+      "author": "Ultimate",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/au-longtail.js",
+      "enabled": true,
+      "hasSettings": false,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://www.google.com/s2/favicons?domain=sbs.com.au&sz=128",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "xpass",
+      "name": "XPass",
+      "description": "TMDB/IMDb resolver \u2014 very fast, deep catalog including rare TV.",
+      "version": "1.0.0",
+      "author": "Dustincos",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/xpass.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/tgqNQxdy/xpass.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "playimdb",
+      "name": "PlayIMDb",
+      "description": "High-speed IMDb-based streaming \u2014 obscure titles supported.",
+      "version": "2.0.0",
+      "author": "PirateZoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/playimdb.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/KzjPtYWY/imdb.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "showbox",
+      "name": "ShowBox",
+      "description": "ShowBox/FMovies backend \u2014 massive Western catalog.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/showbox.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/8c5XGzsx/showbox.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vidsrc",
+      "name": "VidSrc",
+      "description": "Vidsrc premium index \u2014 1080p HD, broad TV coverage.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vidsrc.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/ncMLBsLJ/vidsrc.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vidlink",
+      "name": "VidLink",
+      "description": "Vidlink encrypted TMDB streaming.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vidlink.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/RZRHQd75/vidlink.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "videasy",
+      "name": "VidEasy",
+      "description": "Multi-server encrypted TMDB streaming.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/videasy.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/7LHYMtVV/videasy.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vidfast",
+      "name": "VidFast",
+      "description": "vidfast.pro streams.",
+      "version": "1.0.0",
+      "author": "Dustincos",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vidfast.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/0Qp8PSx5/vidfast.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vidrock",
+      "name": "\ud83e\udea8 VidRock",
+      "description": "1080p/480p/360p multi-server.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vidrock.js",
+      "enabled": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/brxL7qg3/multivid.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vidnest",
+      "name": "Vidnest",
+      "description": "AES-GCM encrypted sources.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vidnest.js",
+      "enabled": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://vidnest.fun/favicon.ico",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vixsrc",
+      "name": "VixSrc",
+      "description": "VixSrc m3u8 with auto quality (IT+EN).",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vixsrc.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/1tHrBvzs/vixsrc.png",
+      "contentLanguage": [
+        "en",
+        "it"
+      ]
+    },
+    {
+      "id": "cineby",
+      "name": "Cineby",
+      "description": "Multi-server 4K/1080p/720p (Videasy network).",
+      "version": "1.9.2",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/cineby.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/dV1HWbqX/cineby.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "cinevibe",
+      "name": "Cinevibe",
+      "description": "Cinevibe.online movies.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie"
+      ],
+      "filename": "providers/cinevibe.js",
+      "enabled": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://www.google.com/s2/favicons?domain=cinevibe.online&sz=128",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "cinefreak",
+      "name": "CineFreak",
+      "description": "Direct MKV streams from cinefreak.nl.",
+      "version": "1.0.0",
+      "author": "piratezoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/cinefreak.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/rpDB2284/cinefreak.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "cinemm",
+      "name": "CineMM",
+      "description": "cinemm.com direct MP4 (multi-CDN).",
+      "version": "1.0.0",
+      "author": "piratezoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/cinemm.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/GtQX10hd/cinemm.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "cinemacity",
+      "name": "CinemaCity",
+      "description": "Multi-language provider.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/cinemacity.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/XYjKhS3b/cinemacity.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "castle",
+      "name": "\ud83c\udff0 Castle",
+      "description": "Multi-lang aggregator.",
+      "version": "2.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/castle.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/0NvGzFyK/castle.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "lordflix",
+      "name": "Lordflix",
+      "description": "Cascading multi-proxy decryption.",
+      "version": "1.0.0",
+      "author": "dustincos",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/lordflix.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/vZgHT15q/lordflix.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "netmirror",
+      "name": "NetMirror",
+      "description": "Netflix / Prime / Disney mirror.",
+      "version": "1.0.0",
+      "author": "Dustincos",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/netmirror.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/L64M3bYV/netmirror.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "notorrent",
+      "name": "NoTorrent",
+      "description": "Non-P2P proxy resolver \u2014 hits rare AU/UK releases.",
+      "version": "1.0.0",
+      "author": "Dustincos",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/notorrent.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/FsSpNcVP/notorrent.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "4khdhub",
+      "name": "4KHDHub",
+      "description": "4KHDHub direct links.",
+      "version": "1.0.1",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/4khdhub.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/DZpW6Xfb/4khdhub.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "4khdhubnew",
+      "name": "4KHDHub-NEW",
+      "description": "4KHDHub v2 - broader catalog.",
+      "version": "2.0.0",
+      "author": "Xyr0nX",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/4khdhubnew.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/DZpW6Xfb/4khdhub.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "uhdmovies",
+      "name": "UHDMovies",
+      "description": "UHD Movies multi-resolution.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/uhdmovies.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/KzDBBdbK/uhdmovies.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "hdhub4u",
+      "name": "HDHub4u",
+      "description": "HDHub4u high-speed direct links.",
+      "version": "1.0.1",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/hdhub4u.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/mryRTf0R/hdhub4u.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "moviesmod",
+      "name": "MoviesMod",
+      "description": "MoviesMod multi-quality.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/moviesmod.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/YqWDJtWW/moviesmod.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "moviesdrive",
+      "name": "MoviesDrive",
+      "description": "MoviesDrive multi-server (HubCloud/GDrive).",
+      "version": "3.0.0",
+      "author": "PirateZoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/moviesdrive.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/bwDbhq9q/moviesdrive.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "movies4u",
+      "name": "Movies4u",
+      "description": "Hollywood/Bollywood movies + web series HD.",
+      "version": "1.0.2",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie"
+      ],
+      "filename": "providers/movies4u.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/J0QG1QhQ/movies4u.jpg",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "movieblast",
+      "name": "MovieBlast",
+      "description": "MovieBlast multi-quality.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/movieblast.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/qqkLSyhN/movieblast.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "moviebox",
+      "name": "MovieBox",
+      "description": "MovieBox multi-lang streams.",
+      "version": "1.0.1",
+      "author": "Xyr0nX",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/moviebox.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/TPwkfqHh/moviebox.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vegamovies",
+      "name": "VegaMovies",
+      "description": "VegaMovies HD direct links.",
+      "version": "2.0",
+      "author": "piratezoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vegamovies.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/TwYK26jn/vegamovies.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "dahmermovies",
+      "name": "Dahmermovies",
+      "description": "1080p movie archive (deep catalog).",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dahmermovies.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/hGt3dV6Z/dhamermovies.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "dahmermovies-tv",
+      "name": "Dahmermovies-TV",
+      "description": "Dahmermovies TV (Android TV only).",
+      "version": "1.0.1",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dahmermovies-4k.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/hGt3dV6Z/dhamermovies.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "streamflix",
+      "name": "StreamFlix",
+      "description": "StreamFlix API direct links.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/streamflix.js",
+      "enabled": true,
+      "formats": [
+        "mkv"
+      ],
+      "logo": "https://streamflix.app/assets/images/logo-text-148x72.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "yflix",
+      "name": "YFlix",
+      "description": "YFlix streaming.",
+      "version": "1.1.2",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/yflix.js",
+      "enabled": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://yflix.to/assets/uploads/2f505f3de3c99889c1a72557f3e3714fc0c457b0.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "goatapi",
+      "name": "\ud83d\udc10 GoatAPI",
+      "description": "GoatAPI movies indexed by TMDB.",
+      "version": "1.0.0",
+      "author": "Aeyshx",
+      "supportedTypes": [
+        "movie"
+      ],
+      "filename": "providers/goatapi.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/d1vkPZpY/goatapi.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "peachify",
+      "name": "\ud83c\udf51 Peachify",
+      "description": "peachify.top - 3 servers (MovieBox/Holly/Air) via CF workers.",
+      "version": "1.0.0",
+      "author": "piratezoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/peachify.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://i.postimg.cc/tCz8CDH3/peachify.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "ctgmovies",
+      "name": "CTGMovies",
+      "description": "English/Hindi movies.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/ctgmovies.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8",
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i.postimg.cc/jSQmk9B3/ctgmovies.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "fibwatch",
+      "name": "FibWatch",
+      "description": "Movies/Series/Anime EN.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/fibwatch.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/sfLR6dMm/fibwatch.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "allmovieland",
+      "name": "AllMovieLand",
+      "description": "AllMovieLand multi-lang.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/allmovieland.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/hhWqkVQs/allmovieland.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "dooflix",
+      "name": "DooFlix",
+      "description": "Fast streaming with TMDB integration.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dooflix.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/59H1DmRk/dooflix.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "topcartoons",
+      "name": "TopCartoons",
+      "description": "Popular cartoons streaming.",
+      "version": "1.0.0",
+      "author": "Phisher",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/topcartoons.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/3xVsbwp8/topcartoons.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "hianime",
+      "name": "HiAnime",
+      "description": "HiAnime multi-server + subs.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/hianime.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/13SYJPTx/hianime.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "animepahe",
+      "name": "AnimePahe",
+      "description": "AnimePahe sub/dub fast servers.",
+      "version": "1.0.1",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/animepahe.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://i.postimg.cc/c4ZBGNNs/animepahe.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "animetsu",
+      "name": "Animetsu",
+      "description": "Lightning fast sub&dub anime.",
+      "version": "1.0.0",
+      "author": "piratezoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/animetsu.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/0Q3DvLx7/animetsu.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "animekai",
+      "name": "AnimeKai",
+      "description": "AnimeKai TV episodes.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/animekai.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/MKJd7fy7/animekai.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "anikototv",
+      "name": "AnikotoTV",
+      "description": "AnikotoTV.to mapper + native extractor.",
+      "version": "1.0.5",
+      "author": "piratezoro9",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/anikototv.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4"
+      ],
+      "logo": "https://i.postimg.cc/JhL3HBR4/anikototv.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "allanime",
+      "name": "AllAnime",
+      "description": "AllAnime anime & manga content.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/allanime.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/DwpqLJWV/allanime.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "allwish",
+      "name": "\ud83c\udf1f All-Wish",
+      "description": "All-Wish TV episodes.",
+      "version": "1.0.1",
+      "author": "Kabir",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/allwish.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "m3u8"
+      ],
+      "logo": "https://i.postimg.cc/WpFW45WQ/allwish.png",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "anizone",
+      "name": "AniZone",
+      "description": "AniZone high-quality multi-audio.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/anizone.js",
+      "enabled": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://anizone.to/favicon.ico",
+      "contentLanguage": [
+        "en"
+      ]
+    },
+    {
+      "id": "vidnest-anime",
+      "name": "VidnestAnime",
+      "description": "TMDB\u2192AniList mapping, 5 servers sub/dub.",
+      "version": "1.0.0",
+      "author": "Nuvio Team",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/vidnest-anime.js",
+      "enabled": true,
+      "formats": [
+        "m3u8"
+      ],
+      "logo": "https://vidnest.fun/favicon.ico",
+      "contentLanguage": [
+        "en"
+      ]
+    }
   ]
 }
