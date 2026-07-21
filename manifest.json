@@ -1,6 +1,6 @@
 {
   "name": "Ultimate Nuvio Repo (English \u2022 Broadest \u2022 Auto-Updating)",
-  "version": "2026.07.21.1344",
+  "version": "2026.07.21.1918",
   "description": "Every working English-supporting Nuvio scraper on Earth, de-duplicated, ordered by hit-rate for orphaned/rare content (benchmark: Small Time Gangster AU 2011). Order: [Debrid caches \u2192 Zilean/DMM/TorBox/StremThru] \u2192 [Jackett private-tracker passthrough] \u2192 [AU-LongTail specialty] \u2192 [Torrent aggregators: Comet/MediaFusion/Jackettio/Torrentio] \u2192 [Premium indexes] \u2192 [Anime]. Auto-updates every 6h from D3adlyRocket + yoruix + phisher upstreams.",
   "scrapers": [
     {
